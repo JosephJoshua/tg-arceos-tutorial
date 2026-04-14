@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-guestmode
+	branch = main
+	commit = b7409b52283729021347e2e04fd0227e220940d0
+	parent = aa9a8d24ac5e25b502736ca0b960fe6347774eba
+	method = merge
+	cmdver = 0.4.9

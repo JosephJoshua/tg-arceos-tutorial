@@ -1,0 +1,27 @@
+[package]
+name = "arceos-printcolor"
+version = "0.4.1"
+edition = "2024"
+authors = ["Yuekai Jia <equation618@gmail.com>", "Yu Chen <yuchen@tsinghua.edu.cn>", "Yifan Wang <w-yf22@mails.tsinghua.edu.cn>"]
+description = "A simple printcolor exercise for ArceOS"
+license = "GPL-3.0"
+homepage = "https://github.com/arceos-org/exercise-printcolor"
+repository = "https://github.com/arceos-org/exercise-printcolor"
+keywords = ["arceos", "exercise"]
+categories = ["os", "no-std"]
+
+[features]
+default = ["axstd"]
+axstd = ["dep:axstd"]
+xtask = ["dep:clap"]
+
+[[bin]]
+name = "xtask"
+path = "xtask/src/main.rs"
+required-features = ["xtask"]
+
+[dependencies]
+axstd = { version = "=0.3.0-preview.1", features = ["defplat"], optional = true }
+clap = { version = "4", features = ["derive"], optional = true }
+
+[profile.release]

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-collections
+	branch = main
+	commit = 508248817bc7d720a16b95097102bc4ead28bd9e
+	parent = 35a35d7e70da9cb9fb72d74431e8231cd69e9e0f
+	method = merge
+	cmdver = 0.4.9

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/exercise-altalloc
+	branch = main
+	commit = ab2b8c21a7beaabb23045a413aeed284290a73c9
+	parent = c40abe56ed4d1ff620da541c799e44dff7c9d10b
+	method = merge
+	cmdver = 0.4.9

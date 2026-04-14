@@ -1,0 +1,31 @@
+[package]
+name = "arceos-ramfs-rename"
+version = "0.4.1"
+edition = "2024"
+authors = ["Lei Shi <shi_lei@massclouds.com>", "Yu Chen <yuchen@tsinghua.edu.cn>", "Yifan Wang <w-yf22@mails.tsinghua.edu.cn>"]
+description = "Exercise about supporting rename operation for ramfs for ArceOS"
+license = "GPL-3.0"
+homepage = "https://github.com/arceos-org/exercise-ramfs-rename"
+repository = "https://github.com/arceos-org/exercise-ramfs-rename"
+keywords = ["arceos", "exercise", "filesystem"]
+categories = ["os", "no-std"]
+
+[features]
+default = []
+axstd = ["dep:axstd", "dep:axfeat", "dep:axfs", "dep:axio"]
+xtask = ["dep:clap"]
+
+[[bin]]
+name = "xtask"
+path = "xtask/src/main.rs"
+required-features = ["xtask"]
+
+[dependencies]
+axstd = { version = "=0.3.0-preview.1", features = ["defplat", "alloc", "paging", "multitask", "sched-cfs", "fs"], optional = true }
+axfeat = { version = "=0.3.0-preview.1", features = ["fs"], optional = true }
+axfs = { version = "=0.3.0-preview.1", optional = true }
+axio = { version = "0.3.0-pre.1", optional = true }
+
+clap = { version = "4", features = ["derive"], optional = true }
+
+[profile.release]

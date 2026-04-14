@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-fairsched
+	branch = main
+	commit = 7e7ef0916d54a74233921c0d28f354f79334df5e
+	parent = 699c1dce82f94f2de94856768fe6d4146b829b47
+	method = merge
+	cmdver = 0.4.9

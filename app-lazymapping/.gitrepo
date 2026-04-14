@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-lazymapping
+	branch = main
+	commit = 5a43c030be95b2c734e0c6ad4e97d43b4a78c3eb
+	parent = 9026d81f360f67ae68da742a1e8c3ab523467e3c
+	method = merge
+	cmdver = 0.4.9

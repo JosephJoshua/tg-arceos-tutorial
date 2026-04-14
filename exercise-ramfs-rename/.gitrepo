@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/exercise-ramfs-rename
+	branch = main
+	commit = 78afbf606563ca62c571c32de2f438e3389e5f57
+	parent = 93b15af8ae20b24a78e5cbee3909e2a230c2f2dc
+	method = merge
+	cmdver = 0.4.9

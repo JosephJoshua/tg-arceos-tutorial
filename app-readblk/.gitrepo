@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-readblk
+	branch = main
+	commit = 8e44b34f0c0e7d5536bb9d49089393d0de420888
+	parent = c4b66e2442470215069bb90eae85445955725bb5
+	method = merge
+	cmdver = 0.4.9

@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-readpflash
+	branch = main
+	commit = 01645974472ed6ea0b82f290ab02a9b64c01e873
+	parent = 8634a4ab74e3da7367f6b75bf56e310c1731a102
+	method = merge
+	cmdver = 0.4.9

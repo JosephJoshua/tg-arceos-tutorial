@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/exercise-hashmap
+	branch = main
+	commit = cf06844af9d2688b2bb62f9d22f4d08516c4dfe4
+	parent = 90b0d40731b0928b8de423a15b1a0cf0c87e7820
+	method = merge
+	cmdver = 0.4.9

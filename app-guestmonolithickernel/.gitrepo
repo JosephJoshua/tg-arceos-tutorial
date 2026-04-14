@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-guestmonolithickernel
+	branch = main
+	commit = 6d916e7272d37adb7b1f6898d1f5bf37cdc68f02
+	parent = fbdd107b990a359ac039bff14ce1d86960b6e60a
+	method = merge
+	cmdver = 0.4.9

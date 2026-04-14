@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-loadapp
+	branch = main
+	commit = 6d49fc8b18574e1e6ae9958cc4bafae6e8b82f21
+	parent = bc44184d8616c03039eb48149ee8872e42c2817b
+	method = merge
+	cmdver = 0.4.9

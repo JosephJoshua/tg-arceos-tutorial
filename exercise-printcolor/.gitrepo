@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/exercise-printcolor
+	branch = main
+	commit = bcd788e1888bb1b202fedc881f81b5fd6acb3a5b
+	parent = a68029f34b0ca73301372f56ad0287cefa930c0d
+	method = merge
+	cmdver = 0.4.9

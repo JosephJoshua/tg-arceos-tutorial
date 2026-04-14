@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-userprivilege
+	branch = main
+	commit = 7486ce462daa3eecf2087a4483d24e540b8e133a
+	parent = aac7cda46fe785b2d835f8c734db06dc8b15a6df
+	method = merge
+	cmdver = 0.4.9

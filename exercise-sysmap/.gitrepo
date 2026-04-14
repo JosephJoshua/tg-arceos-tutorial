@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/exercise-sysmap
+	branch = main
+	commit = 9fed0b1dbcad9b170bc1af182b238b076a1b340f
+	parent = a0ec010d9ac93e616066acea5d2c7228e28f4e53
+	method = merge
+	cmdver = 0.4.9

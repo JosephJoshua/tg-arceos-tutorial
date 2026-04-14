@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-childtask
+	branch = main
+	commit = 0a8b5c3ce2813185f739f5387b46b620b0b042c2
+	parent = 333d01d9090fb082ae30b358102b860139bf3e87
+	method = merge
+	cmdver = 0.4.9

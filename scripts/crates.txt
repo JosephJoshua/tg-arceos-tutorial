@@ -13,3 +13,8 @@ app-readblk
 app-readpflash
 app-runlinuxapp
 app-userprivilege
+exercise-printcolor
+exercise-hashmap
+exercise-altalloc
+exercise-ramfs-rename
+exercise-sysmap

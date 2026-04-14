@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/arceos-org/app-guestaspace
+	branch = main
+	commit = f3b93bf90dee16d5c47426e9f79afac44d29c567
+	parent = 99f356f9479a6ab8d8883b07707b1bf11e07f1c4
+	method = merge
+	cmdver = 0.4.9
