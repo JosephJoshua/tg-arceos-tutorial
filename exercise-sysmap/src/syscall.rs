@@ -358,15 +358,98 @@ fn sys_brk(addr: usize) -> isize {
     addr as isize
 }
 
+/// Static counter for mmap virtual addresses
+static MMAP_ADDR: AtomicUsize = AtomicUsize::new(0x1000_0000);
+
 fn sys_mmap(
     _addr: *mut c_void,
-    _length: usize,
-    _prot: i32,
-    _flags: i32,
-    _fd: i32,
+    length: usize,
+    prot: i32,
+    flags: i32,
+    fd: i32,
     _offset: isize,
 ) -> isize {
-    unimplemented!("no sys_mmap!");
+    let mmap_prot = MmapProt::from_bits_truncate(prot);
+    let mmap_flags = MmapFlags::from_bits_truncate(flags);
+
+    ax_println!(
+        "sys_mmap: length={:#x}, prot={:?}, flags={:?}, fd={}",
+        length,
+        mmap_prot,
+        mmap_flags,
+        fd
+    );
+
+    let map_flags: MappingFlags = mmap_prot.into();
+
+    // Align length up to page size
+    let aligned_length = (length + 0xFFF) & !0xFFF;
+
+    // Pick a virtual address
+    let vaddr = MMAP_ADDR.fetch_add(aligned_length, Ordering::Relaxed);
+
+    if mmap_flags.contains(MmapFlags::MAP_ANONYMOUS) || fd < 0 {
+        // Anonymous mapping: just allocate pages
+        let uspace_guard = crate::USER_ASPACE.lock();
+        let uspace_arc = uspace_guard.as_ref().unwrap();
+        let mut uspace = uspace_arc.lock();
+        if uspace
+            .map_alloc(
+                memory_addr::VirtAddr::from(vaddr),
+                aligned_length,
+                map_flags,
+                true,
+            )
+            .is_err()
+        {
+            return neg_errno(LinuxError::ENOMEM);
+        }
+        return vaddr as isize;
+    }
+
+    // File-backed mapping: read file content and map it
+    let file_content = match with_file_fd(fd, |file| {
+        let mut buf = Vec::new();
+        loop {
+            let mut chunk = [0u8; 4096];
+            match file.read(&mut chunk[..]) {
+                Ok(0) => break,
+                Ok(n) => buf.extend_from_slice(&chunk[..n]),
+                Err(e) => return Err(LinuxError::from(e)),
+            }
+        }
+        Ok(buf)
+    }) {
+        Ok(buf) => buf,
+        Err(e) => return neg_errno(e),
+    };
+
+    let uspace_guard = crate::USER_ASPACE.lock();
+    let uspace_arc = uspace_guard.as_ref().unwrap();
+    let mut uspace = uspace_arc.lock();
+
+    if uspace
+        .map_alloc(
+            memory_addr::VirtAddr::from(vaddr),
+            aligned_length,
+            map_flags,
+            true,
+        )
+        .is_err()
+    {
+        return neg_errno(LinuxError::ENOMEM);
+    }
+
+    // Write file content into the mapped region
+    let write_len = file_content.len().min(length);
+    if uspace
+        .write(memory_addr::VirtAddr::from(vaddr), &file_content[..write_len])
+        .is_err()
+    {
+        return neg_errno(LinuxError::EFAULT);
+    }
+
+    vaddr as isize
 }
 
 #[cfg(target_arch = "x86_64")]
